@@ -37,12 +37,6 @@ We use the **CelebA** dataset (large-scale face images).
 Note: Download CelebA from the official source and organize paths consistent with your environment. The included `train_model.py` assumes a Colab-style layout and Google Drive checkpoints; adjust paths if running locally.
 
 ### Installation
-Clone the repo:
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-```
-
 Create a virtual environment and install dependencies:
 ```bash
 python -m venv venv
