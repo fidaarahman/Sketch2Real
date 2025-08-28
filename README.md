@@ -92,7 +92,8 @@ Artifacts (by default in the Colab example):
 - **History**: `sketch2image_training_history.pkl`
 
 ### Example Results
-Input Sketch ➜ Generated Image (use the web app; outputs saved to `static/uploads/`).
+<img width="800" height="443" alt="image" src="https://github.com/user-attachments/assets/14705714-db83-45fa-a35b-8e62a9e38a0c" />
+
 
 ### Future Work
 - **Experiment with GAN-based models** for higher realism
