@@ -1,0 +1,6 @@
+python -m venv venv
+venv\Scripts\activate
+pip install --upgrade pip setuptools wheel
+pip install flask tensorflow==2.18.0 keras gradio opencv-python matplotlib
+python app.py
+python new.py

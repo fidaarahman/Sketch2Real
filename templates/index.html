@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sketch2Reality AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/animation.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-magic"></i>
+                <h1>Sketch<span>2</span>Reality AI</h1>
+            </div>
+            <p class="tagline">Transform your sketches into photorealistic images with AI</p>
+        </header>
+
+        <main>
+            <div class="cards-container">
+                <div class="card input-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-pencil-alt"></i> Input Sketch</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="draw">Draw</button>
+                            <button class="tab-btn" data-tab="upload">Upload</button>
+                        </div>
+
+                        <div class="tab-content active" id="draw-content">
+                            <canvas id="drawingCanvas" width="400" height="400"></canvas>
+                            <div class="canvas-controls">
+                                <button id="clearCanvas" class="btn secondary-btn">
+                                    <i class="fas fa-trash"></i> Clear
+                                </button>
+                                <input type="color" id="brushColor" value="#000000" />
+                                <input type="range" id="brushSize" min="1" max="50" value="5" />
+                                <span id="brushSizeValue">5px</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="upload-content">
+                            <div class="upload-area" id="dropArea">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop your sketch here<br />or</p>
+                                <label for="fileInput" class="btn secondary-btn">Choose File</label>
+                                <input type="file" id="fileInput" accept="image/*" hidden />
+                                <p id="fileName"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card output-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-image"></i> AI Result</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="result-container" id="resultContainer">
+                            <div class="placeholder">
+                                <i class="fas fa-image"></i>
+                                <p>Your AI-generated image will appear here</p>
+                            </div>
+                            <img id="resultImage" src="" alt="" style="display: none;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Updated prompt section: Removed prompt input, only generate button remains -->
+            <div class="prompt-section">
+                <button id="generateBtn" class="btn primary-btn">
+                    <span class="btn-content">
+                        <i class="fas fa-bolt"></i> Generate Image
+                    </span>
+                    <span class="loading-spinner" id="loadingSpinner" style="display:none;">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                    </span>
+                </button>
+            </div>
+
+            <div class="examples-section">
+                <h3>Example Transformations</h3>
+                <div class="examples-grid">
+                    <div class="example">
+                        <div class="example-img sketch">
+                            <img src="{{ url_for('static', filename='img/sketch1.jpg') }}" alt="Sketch example" />
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="example-img result">
+                            <img src="{{ url_for('static', filename='img/result1.jpg') }}" alt="Result example" />
+                        </div>
+                    </div>
+                    <div class="example">
+                        <div class="example-img sketch">
+                            <img src="{{ url_for('static', filename='img/sketch2.jpg') }}" alt="Sketch example" />
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="example-img result">
+                            <img src="{{ url_for('static', filename='img/result2.jpg') }}" alt="Result example" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by advanced AI image-to-image translation technology</p>
+            <p class="copyright">© 2025 Sketch2Reality AI</p>
+        </footer>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
